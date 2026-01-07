@@ -4,8 +4,10 @@ import {
   createRootRoute,
   HeadContent,
   Scripts,
+  Link,
 } from "@tanstack/react-router";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Button } from "@/components/ui/button";
 import "@/styles.css";
 
 const themeScript = `
@@ -28,6 +30,7 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
+  notFoundComponent: NotFoundComponent,
 });
 
 function RootComponent() {
@@ -52,5 +55,15 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
         <Scripts />
       </body>
     </html>
+  );
+}
+
+function NotFoundComponent() {
+  return (
+    <div className="flex min-h-screen flex-col items-center justify-center gap-4">
+      <h1 className="text-4xl font-bold">404</h1>
+      <p className="text-muted-foreground">Page not found</p>
+      <Button render={<Link to="/">Go Home</Link>} />
+    </div>
   );
 }
