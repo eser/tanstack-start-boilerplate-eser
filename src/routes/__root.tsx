@@ -6,6 +6,7 @@ import {
   Scripts,
   Link,
 } from "@tanstack/react-router";
+import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Button } from "@/components/ui/button";
 import "@/styles.css";
@@ -26,7 +27,7 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Eser's TanStack Start App" },
-      { name: "description", content: "Eser's TanStack React Start boilerplate" },
+      { name: "description", content: "A minimal, type-safe full-stack React starter template with modern tooling" },
     ],
   }),
   component: RootComponent,
@@ -52,6 +53,7 @@ function RootDocument({ children }: Readonly<{ children: ReactNode }>) {
       </head>
       <body className="min-h-screen bg-background font-sans antialiased">
         {children}
+        <TanStackRouterDevtools position="bottom-right" />
         <Scripts />
       </body>
     </html>

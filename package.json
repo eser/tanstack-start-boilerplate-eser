@@ -1,5 +1,6 @@
 {
   "name": "tanstack-start-boilerplate-eser",
+  "description": "A minimal, type-safe full-stack React starter template with modern tooling",
   "version": "1.0.0",
   "type": "module",
   "scripts": {
