@@ -13,9 +13,7 @@ export default defineConfig({
   },
   plugins: [
     devtools(),
-    nitro({
-      preset: "node_server",
-    }),
+    nitro(),
     tsConfigPaths({
       projects: ["./tsconfig.json"],
     }),
